@@ -1,0 +1,27 @@
+#red{
+    background-color: #f72907;
+}
+
+#yellow{
+    background-color: #f6f530;
+}
+
+#green{
+    background-color: #0b7d14;
+}
+
+tr, th, td {
+    padding: 0 20px;
+    margin: 0;
+}
+
+table{
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+div{
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+}

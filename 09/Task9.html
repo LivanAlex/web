@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td, th{
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: right;
+        }
+    </style>
+</head>
+
+
+
+
+<script>
+
+    document.write("<table><tr>");
+    document.write("<td>Степень</td><td>Результат</td></tr>");
+    for (let i = 0; i <= 5; i++) {
+        document.write("<tr><td>2<sup>" + i +"</sup></td><td>" + Math.pow(2,i) +"</td></tr>");
+    }
+    document.write("<tr></table>");
+
+</script>
+</body>
+</html>

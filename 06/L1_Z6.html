@@ -1,0 +1,31 @@
+﻿<html>
+<body>
+<p>Узнайте какое из трех округленных до ближайшего целого значений ниже минимально и выведите результат на экран: </p>
+<p>1. (48/3PI+308/4E)<sup>2</sup>-203sin(5)+(10PI-3E)<sup>3</sup>.</p>
+<p>2. (cos(20)-cos(3)+tan(5))<sup>0.5</sup>-203/sin(2).</p>
+<p>3. (22PI/22E-sin(3)*tan(4)-34)<sup>10</sup>.</p>
+<script type='text/javascript'>
+
+    const e = Math.E;
+    const pi = Math.PI;
+
+    let result1 = Math.pow((48 / 3 * pi + 308 / 4 * e), 2) - 203 * Math.sin(5) + Math.pow((10 * pi - 3 * e), 3);
+    result1 = Math.round(result1);
+
+    let result2 = Math.pow((Math.cos(20) - Math.cos(3) + Math.tan(150)), 1 / 2) - 203 / Math.sin(2);
+    result2 = Math.round(result2);
+
+    let result3 = Math.pow(((22 * pi) / (22 * e)) - Math.sin(3) * Math.tan(4) -34, 10);
+    result3 = Math.round(result3);
+
+    console.log(result1);
+    console.log(result2);
+    console.log(result3);
+
+    let out = Math.min(result1, result2, result3);
+
+    console.log(out);
+
+</script>
+</body>
+</html>

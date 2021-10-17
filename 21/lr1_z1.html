@@ -1,0 +1,13 @@
+﻿<html>
+<body>
+<p>С помощью регулярного выражения найдите в тексте ниже все слова, выделенные жирным шрифтом 
+(не используя поиск альтернатив).</p>
+<p><b>yandex.ru</b> example.com <b>www.yandex.ru</b> example.ru <b>yandex</b> 
+http://example.com <b>http://www.yandex.ru</b> <b>YANDEX.RU</b> </p>
+<script type='text/javascript'>
+txt=' yandex.ru example.com www.yandex.ru example.ru yandex http://example.com http://www.yandex.ru wiisdomweb.ru YANDEX.RU ';
+regex1=/(http:[/][/])?(w{3}.)?yandex(.ru)?/igm;
+document.write('<b>'+txt.match(regex1)+'</b>');
+</script>
+</body>
+</html>

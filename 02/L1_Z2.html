@@ -1,0 +1,29 @@
+﻿<html>
+    <body>
+    <p>Извлеките часть строки ниже выделенную жирным шрифтом сначала с помощью метода <b>substr()</b> затем с помощью <b>substring()</b>
+        и выведите ее на страницу:
+    </p>
+    <hr/>
+    <p>В тайге и горах можно увидеть <b>марала, лося, белку</b>, бурундука, зайца. </p>
+    <hr/>
+    <p id="out1"></p>
+    <p id="out2"></p>
+    <script type='text/javascript'>
+
+        str = 'В тайге и горах можно увидеть <b>марала, лося, белку</b>, бурундука, зайца.';
+
+        let x = 3 + str.indexOf("<b>");
+        let y = str.indexOf("</b>");
+
+        out1 = str.substr(x, y - x);
+        out2 = str.substring(x, y);
+
+        let elem1 = document.getElementById("out1");
+        let elem2 = document.getElementById("out2");
+
+        elem1.innerHTML = out1;
+        elem2.innerHTML = out2;
+
+    </script>
+    </body>
+</html>

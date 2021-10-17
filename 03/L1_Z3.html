@@ -1,0 +1,29 @@
+﻿<html>
+<body>
+<p>1.Раскодируйте значение строки и выведите ее на страницу: </p>
+<hr/>
+<p>(1052)(1086)(1089)(1082)(1074)(1072)</p>
+<hr/>
+<p>2.После того как строка будет раскодирована закодируйте ее обратно и сравните свой результат с данными задачи. </p>
+<p><b>Подсказка:</b> используйте методы <b>fromCharCode()</b> и <b>charCodeAt()</b>.</p>
+
+<script type='text/javascript'>
+
+    let str = String.fromCharCode(1052, 1086, 1089 ,1082 ,1074 ,1072);
+    document.write(str);
+
+
+    document.write("</br>");
+    strCode = "";
+    for (let i = 0; i < str.length; i++) {
+        strCode += "(" + str.charCodeAt(i) + ")";
+    }
+
+    document.write(strCode);
+
+
+
+
+</script>
+</body>
+</html>

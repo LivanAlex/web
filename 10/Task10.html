@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Detect.js/2.2.2/detect.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Detect.js/2.2.2/detect.min.js"></script>
+<script>
+    let ua = detect.parse(navigator.userAgent);
+    let browser = ua.browser.family;
+
+    if (browser === "Chrome"){
+        document.location.href = 'https://google.com';
+    } else if(browser === "Firefox"){
+        document.location.href = 'https://onliner.by';
+    }
+</script>
+</body>
+</html>
