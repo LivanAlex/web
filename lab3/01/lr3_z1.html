@@ -1,47 +1,47 @@
-﻿<html>                                                                  
+﻿<html>
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<style type="text/css">
-#code
-{
-background-color:#fffDBD;
-margin:10px;
-padding:5px;
-}
-</style>
+    <style type="text/css">
+        #code {
+            background-color: #fffDBD;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
-</script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+    </script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    $(document).ready(function(){
-        $("#but1").click(function () {
-            $("#par1").load("autumn.txt");
+        $(document).ready(function () {
+            $("#but1").click(function () {
+                $("#par1").load("autumn.txt");
+            });
+            $("#but2").click(function () {
+                $("#par1").load("winter.txt");
+            });
+            $("#but3").click(function () {
+                $("#par1").load("summer.txt");
+            });
+            $("#but4").click(function () {
+                $("#par1").load("spring.txt");
+            });
         });
-        $("#but2").click(function () {
-            $("#par1").load("winter.txt");
-        });
-        $("#but3").click(function () {
-            $("#par1").load("summer.txt");
-        });
-        $("#but4").click(function () {
-            $("#par1").load("spring.txt");
-        });
-    });
 
-</script>
+    </script>
 
 </head>
-<body> 
-<p><b>Создайте AJAX запросы, которые должны после нажатия на соответствующие кнопки обращаться к файлам autumn.txt, winter.txt, summer.txt, и spring.txt и затем отображать результат выполнения запроса в абзац с id=par1.</b></p>
+<body>
+<p><b>Создайте AJAX запросы, которые должны после нажатия на соответствующие кнопки обращаться к файлам autumn.txt,
+    winter.txt, summer.txt, и spring.txt и затем отображать результат выполнения запроса в абзац с id=par1.</b></p>
 <div id="code">
-<p id="par1">В данном абзаце будут отображены результаты запросов.</p>
-<input id="but1" type="button" value="Обратится к файлу autumn.txt" />
-<input id="but2" type="button" value="Обратится к файлу winter.txt" />
-<br /><br />
-<input id="but3" type="button" value="Обратится к файлу summer.txt" />
-<input id="but4" type="button" value="Обратится к файлу spring.txt" />
+    <p id="par1">В данном абзаце будут отображены результаты запросов.</p>
+    <input id="but1" type="button" value="Обратится к файлу autumn.txt"/>
+    <input id="but2" type="button" value="Обратится к файлу winter.txt"/>
+    <br/><br/>
+    <input id="but3" type="button" value="Обратится к файлу summer.txt"/>
+    <input id="but4" type="button" value="Обратится к файлу spring.txt"/>
 </div>
 <div id="content"></div>
 </body>
