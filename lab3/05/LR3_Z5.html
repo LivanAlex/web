@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+    <script type='text/javascript'>
+        function winter() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById('res').innerHTML = this.responseText;
+                }
+
+            }
+            xhttp.open('GET', "winter.txt", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+<input type='button' value='Отправить запрос' onclick='winter()'/>
+<br/><br/>
+<div id='res'></div>
+</body>
+</html>
