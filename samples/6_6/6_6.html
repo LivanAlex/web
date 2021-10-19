@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+<script type='text/javascript'>
+function request(){
+   let xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+   if (xhttp.readyState==0)
+      document.getElementById('rs0').style.display='block';
+   if (xhttp.readyState==1)
+      document.getElementById('rs1').style.display='block';
+   if (xhttp.readyState==2)
+      document.getElementById('rs2').style.display='block';
+   if (xhttp.readyState==3)
+      document.getElementById('rs3').style.display='block';
+   if (xhttp.readyState==4){
+      document.getElementById('rs4').style.display='block';
+      document.getElementById('result').innerHTML=xhttp.responseText;
+   }}
+   xhttp.open('GET','state.php',true);
+   xhttp.send();
+}
+</script>
+</head>
+<body>
+<p id='rs0' style='display:none'><b>Состояние готовности 0.</b> Запрос не инициализирован.</p>
+<p id='rs1' style='display:none'><b>Состояние готовности 1.</b> Установлено подключение к серверу.</p>
+<p id='rs2' style='display:none'><b>Состояние готовности 2.</b> Запрос получен.</p>
+<p id='rs3' style='display:none'><b>Состояние готовности 3.</b> Обработка запроса.</p>
+<p id='rs4' style='display:none'><b>Состояние готовности 4.</b> Обработка запроса закончена и ответ готов</p>
+<input type='button' value='Обратится к серверу' onclick='request()' />
+<p>Результат выполнения скрипта: <b><span id='result'></span></b> </p>
+</body>
+</html>

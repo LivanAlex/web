@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+<script type='text/javascript'>
+function start(){
+   xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('ajax').innerHTML=xhttp.responseText;
+      }
+   xhttp.open('GET','testfile.txt',true);
+   xhttp.send();
+}
+</script>
+</head>
+<body>
+<b><p id='ajax'>Нажмите на кнопку ниже, чтобы асинхронно запросить данные с помощью AJAX из тестового файла testfile, который находится на сервере. </p></b>
+<input type='button' value='Нажмите на меня' onclick='start()'/>
+</body>
+</html>

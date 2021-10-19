@@ -1,0 +1,28 @@
+﻿<html>
+<head>
+<script type='text/javascript'>
+function requestBad(){
+   let xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+      document.getElementById('result').innerHTML=xhttp.status;
+   }
+   xhttp.open('GET','test.xml',true);
+   xhttp.send();
+}
+function requestGood(){
+   let xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+      document.getElementById('result').innerHTML=xhttp.status;
+   }
+   xhttp.open('GET','6_1.html',true);
+   xhttp.send();
+}
+</script>
+</head>
+<body>
+<input type='button' value='Обратится к существующей странице' onclick='requestGood()' />
+<input type='button' value='Обратится к несуществующей странице' onclick='requestBad()' />
+<br /><br />
+<b>Состояние ответа: <span id='result'></span></b>
+</body>
+</html>
