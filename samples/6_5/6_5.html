@@ -1,20 +1,20 @@
 ﻿<html>
 <head>
-<script type='text/javascript'>
-function start(){
-   xhttp=new XMLHttpRequest();
-   xhttp.onreadystatechange=function(){
-      if (xhttp.readyState==4 && xhttp.status==200)
-         document.getElementById('time').innerHTML=xhttp.responseText;
-      }
-   xhttp.open('GET','gettime.php?x='+Math.random(),true);
-   xhttp.send();
-}
-</script>
+    <script type='text/javascript'>
+        function start() {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200)
+                    document.getElementById('time').innerHTML = xhttp.responseText;
+            }
+            xhttp.open('GET', 'gettime.php?x=' + Math.random(), true);
+            xhttp.send();
+        }
+    </script>
 </head>
 <body>
 <input type='button' value='Отобразить текущее время' onclick='start()'/>
-<br /><br />
-<div id='time'> </div>
+<br/><br/>
+<div id='time'></div>
 </body>
 </html>

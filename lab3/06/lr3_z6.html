@@ -1,17 +1,38 @@
 ﻿<html>
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<script type='text/javascript'>
-/* Пишите код здесь */
-</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type='text/javascript'>
+
+        function getSeason(season) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    $("#" + season).text(xhttp.responseText);
+                }
+            }
+            xhttp.open("GET", season + ".txt?x="+Math.random(), true);
+            xhttp.send();
+        }
+
+        /* Пишите код здесь */
+    </script>
 </head>
 <body>
 <!--
 Пишите код здесь 
 -->
-<div id='summer'> </div>
-<div id='autumn'> </div>
-<div id='winter'> </div>
-<div id='spring'> </div>
+<div id="buttons">
+    <input type="button" value="summer" onclick="getSeason('summer')"/>
+    <input type="button" value="autumn" onclick="getSeason('autumn')"/>
+    <input type="button" value="winter" onclick="getSeason('winter')"/>
+    <input type="button" value="spring" onclick="getSeason('spring')"/>
+
+</div>
+
+<div id='summer'></div>
+<div id='autumn'></div>
+<div id='winter'></div>
+<div id='spring'></div>
 </body>
 </html>
