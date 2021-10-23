@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type='text/javascript'>
+
+        function getInfo() {
+            xhttp = new XMLHttpRequest();
+            xhttp.open('GET', 'bookshop.json?=x'+Math.random(), true);
+            xhttp.send();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4) {
+                    //Принятое содержимое json файла должно быть вначале обработано функцией eval
+                    //console.log(xhttp.responseText);
+                    var json = eval('(' + xhttp.responseText + ')');
+                    //Далее мы можем спокойно использовать данные
+
+                    $('#wrap').css('display', 'block');
+                    $('#res1').text(json.bookbase[3].author);
+                    $('#res2').text(json.bookbase[5].author);
+                    $('#res3').text(json.bookbase[6].author);
+                    $('#res4').text(json.bookbase[7].author);
+
+                    let sum = 0;
+                    $.each(json.bookbase,function(index, value){
+                        if(index == 3 || index == 6|| index == 9 || index ==12){
+                            sum += value.quantity;
+                        }
+                    });
+
+                    $('#res5').text(sum);
+
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" value="json" onclick="getInfo()">
+<div id='wrap' style='display:none;'>
+    <hr/>
+    <p>Value 4-го тега author: <b><span id='res1'></span></b></p>
+    <p>Value 6-го тега title: <b><span id='res2'></span></b></p>
+    <p>Value 7-го тега title: <b><span id='res3'></span></b></p>
+    <p>Value 8-го тега title: <b><span id='res4'></span></b></p>
+    <p>Сумма содержимого 4-го, 7-го, 10-го и 13-го тэга quantity: <b><span id='res5'></span></b></p>
+
+
+    <hr/>
+</div>
+</body>
+</html>

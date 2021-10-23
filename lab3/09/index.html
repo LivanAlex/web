@@ -1,0 +1,48 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <button onclick="loadPhones()" id="button">Загрузить phonebase.json!</button>
+  <div id="result"></div>
+  <script>
+    function loadPhones() {
+
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', 'phonebase.json?=x' + Math.random(), true);
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+
+        button.innerHTML = 'Готово!';
+
+        if (xhr.status != 200) {
+          $('#result').append('<p>В настоящее время на сайте проходят технические работы, попробуйте повторить ваш запрос позже</p>');
+          //alert(xhr.status + ': ' + xhr.statusText);
+        } else {
+          let result = jQuery.parseJSON(xhr.responseText);
+          result.forEach(function (obj){
+            $('#result').append('<p>' + obj.name + '</p>');
+          });
+
+        }
+
+      }
+
+      xhr.send();
+
+      button.innerHTML = 'Загружаю...';
+      button.disabled = true;
+    }
+  </script>
+
+</body>
+
+</html>
