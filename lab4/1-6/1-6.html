@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            margin: 10px 10px;
+        }
+
+        #digit {
+            width: 20px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        function task1() {
+            $.ajax({
+                type: "POST",
+                url: '01.php?=x' + Math.random(),
+                data: 'data=' + $('#data1').val(),
+                success: function (message) {
+                    $('#result1').text(message);
+                },
+                error: function () {
+                    alert('There was some error performing the AJAX call!');
+                }
+            });
+        }
+
+        function task2() {
+            $.ajax({
+                type: "POST",
+                url: '02.php?=x' + Math.random(),
+                data: 'digit=' + $('#digit').val() + '&number=' + $('#number').val(),
+                success: function (message) {
+                    $('#result2').text(message);
+                },
+                error: function () {
+                    alert('There was some error performing the AJAX call!');
+                }
+            });
+        }
+
+        function task3() {
+            $.ajax({
+                type: "POST",
+                url: '03.php?=x' + Math.random(),
+                data: 'start=' + $('#start').val() + '&end=' + $('#end').val(),
+                success: function (message) {
+                    $('#result3').text(message);
+                },
+                error: function () {
+                    alert('There was some error performing the AJAX call!');
+                }
+            });
+        }
+
+        function task4() {
+            $.ajax({
+                type: "POST",
+                url: '04.php?=x' + Math.random(),
+                success: function (message) {
+                    $('#result4').html(message);
+
+                },
+                error: function () {
+                    alert('There was some error performing the AJAX call!');
+                }
+            })
+        }
+
+        function task5() {
+            $.ajax({
+                type: "POST",
+                url: '05.php?=x' + Math.random(),
+                data: 'name=' + $('#name').val(),
+                success: function (message) {
+                    $('#result5').html(message);
+
+                },
+                error: function () {
+                    alert('There was some error performing the AJAX call!');
+                }
+            })
+        }
+
+        function task6() {
+            $.ajax({
+                type: "POST",
+                url: '06.php?=x' + Math.random(),
+                data: 'num=' + $('#num').val(),
+                success: function (message) {
+                    $('#result6').html(message);
+
+                },
+                error: function () {
+                    alert('There was some error performing the AJAX call!');
+                }
+            })
+        }
+
+
+    </script>
+</head>
+<body>
+<div id="task1">
+    <div>введите целое число:</div>
+    <input id="data1" type="text">
+    <input type="button" value="задание 1" onclick="task1()">
+    <span id="result1"></span>
+</div>
+
+<div id="task2">
+    <div>введите цифру и целое число:</div>
+    <input id="digit" type="text">
+    <input id="number" type="text">
+    <input type="button" value="задание 2" onclick="task2()">
+    <span id="result2"></span>
+</div>
+
+<div id="task3">
+    <div>введите два числа числа:</div>
+    <input id="start" type="text">
+    <input id="end" type="text">
+    <input type="button" value="задание 3" onclick="task3()">
+    <span id="result3"></span>
+</div>
+
+<div id="task4">
+    <div>можно смело жать кнопку:</div>
+    <input type="button" value="задание 4" onclick="task4()">
+    <div id="result4"></div>
+</div>
+
+<div id="task5">
+    <div>Введите Фамилию Имя и Отчество:</div>
+    <input id="name" type="text">
+    <input type="button" value="задание 5" onclick="task5()">
+    <span id="result5"></span>
+</div>
+
+<div id="task6">
+    <div>Введите порядковый номер игральной карты:</div>
+    <input id="num" type="text">
+    <input type="button" value="задание 6" onclick="task6()">
+    <span id="result6"></span>
+</div>
+
+
+</body>
+</html>
