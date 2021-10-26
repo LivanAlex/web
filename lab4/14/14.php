@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>13</title>
+    <title>14</title>
 </head>
 <body>
 <p>Вы знаете PHP?</p>
